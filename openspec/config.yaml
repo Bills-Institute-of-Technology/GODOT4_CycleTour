@@ -1,0 +1,29 @@
+schema: spec-driven
+
+context: |
+  Tech stack: Godot 4 (.NET build), C# (.NET 8+), Godot scene/node architecture
+  Domain: 3D bicycling simulation — stage-based racing game inspired by Tour de France
+  Primary purpose: Educational project. Not monetized.
+
+  Core gameplay concepts:
+  - Player health monitor: riding consumes health; harder/faster riding consumes it faster
+  - Health recovery: coasting and consuming food/drink restores health
+  - Stage structure: each stage has a length and elevation profile affecting difficulty
+  - Realistic 3D landscape terrain with climbs, descents, and flat sections
+
+  Conventions:
+  - C# PascalCase for classes and public members; camelCase for private fields with underscore prefix (_fieldName)
+  - Godot node naming: PascalCase (e.g., PlayerBike, StageManager)
+  - Signals: use Godot C# signal pattern ([Signal] delegate with EmitSignal)
+  - Scenes: one scene per major game object/system
+  - Keep Godot-specific logic in Node subclasses; pure game logic in plain C# classes
+
+rules:
+  proposal:
+    - Include a "Non-goals" section
+    - Note educational/learning value where relevant
+    - Keep scope small — prefer focused, incremental changes
+  tasks:
+    - Break tasks into chunks of roughly 1-2 hours of work
+    - Each task should be independently testable in the Godot editor
+    - Prefer Godot editor-verifiable outcomes (e.g., scene runs, inspector shows expected values)
